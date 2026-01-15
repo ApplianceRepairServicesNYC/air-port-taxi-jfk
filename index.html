@@ -135,7 +135,7 @@
         .borough-card .borough-details ul { margin: 10px 0; padding-left: 20px; }
         .borough-card .borough-details li { margin-bottom: 6px; color: rgba(255,255,255,0.85); }
         .borough-card .borough-details strong { color: var(--accent); }
-        .borough-card .map-btn { display: inline-block; padding: 16px 32px; background: var(--accent); color: var(--primary); text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 8px; min-height: 48px; }
+        .borough-card .map-btn { display: block; padding: 16px 32px; background: var(--accent); color: var(--primary); text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 8px; min-height: 48px; margin-top: 15px; }
         .borough-card .map-btn:hover { background: #e6951a; }
         .contact-section { padding: 60px 20px; background: white; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; }
@@ -182,6 +182,7 @@
                             <li><a href="#jfk-to-queens">JFK to Queens</a></li>
                             <li><a href="#jfk-to-bronx">JFK to Bronx</a></li>
                             <li><a href="#jfk-to-staten-island">JFK to Staten Island</a></li>
+                            <li><a href="#long-island">JFK to Long Island</a></li>
                             <li><a href="#pricing">Flat Rate Pricing</a></li>
                         </ul>
                     </div>
@@ -586,6 +587,27 @@
                             <p>Direct service to Staten Island via Verrazzano Bridge. All tolls included.</p>
                         </div>
                         <a href="https://www.google.com/maps/place/Staten+Island,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View Staten Island on Maps →</a>
+                    </div>
+                    <div class="borough-card" id="borough-long-island">
+                        <div class="pin-icon">
+                            <svg viewBox="0 0 24 36" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#f5a623"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
+                        </div>
+                        <h3>Long Island, NY</h3>
+                        <p>$45+ Flat Rate from JFK</p>
+                        <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
+                        <div class="borough-details">
+                            <p><strong>Pickup & Drop-off Areas:</strong></p>
+                            <ul>
+                                <li>Nassau County (Garden City, Hempstead, Great Neck)</li>
+                                <li>Suffolk County (Huntington, Babylon, Islip)</li>
+                                <li>Long Beach & Jones Beach area</li>
+                                <li>Hamptons (Southampton, East Hampton)</li>
+                                <li>Montauk & North Fork</li>
+                                <li>All residential & commercial addresses</li>
+                            </ul>
+                            <p>Convenient flat rate taxi service from JFK to all Long Island destinations.</p>
+                        </div>
+                        <a href="https://www.google.com/maps/place/Long+Island,+NY" target="_blank" rel="noopener" class="map-btn">View Long Island on Maps →</a>
                     </div>
                 </div>
                 </div>
