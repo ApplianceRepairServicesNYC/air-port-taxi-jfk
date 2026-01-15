@@ -115,7 +115,12 @@
         .book-btn:hover { background: #e6951a; }
         .borough-map-section { padding: 40px 20px; background: #f8f9fa; }
         .borough-map-section h2 { font-size: 32px; text-align: center; color: var(--primary); margin-bottom: 10px; }
-        .borough-map-section > p { font-size: 16px; text-align: center; color: #555; margin-bottom: 30px; }
+        .borough-map-section > p { font-size: 16px; text-align: center; color: #555; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .view-areas-btn { display: inline-block; background: var(--accent); color: var(--primary); padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 18px; cursor: pointer; margin: 0 auto 30px; text-align: center; transition: all 0.3s; }
+        .view-areas-btn:hover { background: #e6951a; }
+        .borough-map-section { text-align: center; }
+        .borough-cards-wrapper { display: none; }
+        .borough-cards-wrapper.open { display: block; }
         .borough-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
         @media (max-width: 600px) { .borough-cards-grid { grid-template-columns: 1fr; } }
         .borough-card { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4a 50%, #1a1a2e 100%); border-radius: 16px; padding: 40px 30px; text-align: center; box-shadow: 0 8px 32px rgba(26,26,46,.3); }
@@ -123,6 +128,13 @@
         .borough-card .pin-icon { width: 40px; height: 50px; margin: 0 auto 20px; }
         .borough-card h3 { color: #fff; font-size: 24px; margin: 0 0 8px; }
         .borough-card p { color: rgba(255,255,255,.8); font-size: 14px; margin: 0 0 20px; }
+        .borough-card .learn-more-borough { display: inline-block; color: var(--accent); font-weight: 600; cursor: pointer; padding: 10px 20px; border: 2px solid var(--accent); border-radius: 6px; margin-bottom: 15px; transition: all 0.3s; }
+        .borough-card .learn-more-borough:hover { background: var(--accent); color: var(--primary); }
+        .borough-card .borough-details { display: none; text-align: left; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); line-height: 1.7; }
+        .borough-card .borough-details.open { display: block; }
+        .borough-card .borough-details ul { margin: 10px 0; padding-left: 20px; }
+        .borough-card .borough-details li { margin-bottom: 6px; color: rgba(255,255,255,0.85); }
+        .borough-card .borough-details strong { color: var(--accent); }
         .borough-card .map-btn { display: inline-block; padding: 16px 32px; background: var(--accent); color: var(--primary); text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 8px; min-height: 48px; }
         .borough-card .map-btn:hover { background: #e6951a; }
         .contact-section { padding: 60px 20px; background: white; }
@@ -466,7 +478,9 @@
         <div class="container">
             <section class="borough-map-section">
                 <h2>NYC Service Areas</h2>
-                <p>Flat Rate Taxi Service to All NYC Boroughs - 24/7</p>
+                <p>We provide flat rate taxi service for pickups and drop-offs throughout all five NYC boroughs. Whether you're heading to JFK Airport or arriving from a flight, our drivers will get you there safely and affordably - 24 hours a day, 7 days a week.</p>
+                <div class="view-areas-btn" onclick="toggleAllAreas(this)">View All Service Areas ▼</div>
+                <div class="borough-cards-wrapper">
                 <div class="borough-cards-grid">
                     <div class="borough-card" id="borough-manhattan">
                         <div class="pin-icon">
@@ -474,6 +488,19 @@
                         </div>
                         <h3>Manhattan, NY</h3>
                         <p>$52 Flat Rate from JFK</p>
+                        <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
+                        <div class="borough-details">
+                            <p><strong>Pickup & Drop-off Areas:</strong></p>
+                            <ul>
+                                <li>Midtown (Times Square, Penn Station, Grand Central)</li>
+                                <li>Downtown (Financial District, World Trade Center)</li>
+                                <li>Upper East Side & Upper West Side</li>
+                                <li>Chelsea, SoHo, Tribeca, Greenwich Village</li>
+                                <li>Harlem & Washington Heights</li>
+                                <li>All hotels, offices & residential addresses</li>
+                            </ul>
+                            <p>Door-to-door service anywhere in Manhattan. All tolls included in your flat rate.</p>
+                        </div>
                         <a href="https://www.google.com/maps/place/Manhattan,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View Manhattan on Maps →</a>
                     </div>
                     <div class="borough-card" id="borough-brooklyn">
@@ -482,6 +509,19 @@
                         </div>
                         <h3>Brooklyn, NY</h3>
                         <p>$35 Flat Rate from JFK</p>
+                        <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
+                        <div class="borough-details">
+                            <p><strong>Pickup & Drop-off Areas:</strong></p>
+                            <ul>
+                                <li>Downtown Brooklyn & DUMBO</li>
+                                <li>Williamsburg & Greenpoint</li>
+                                <li>Park Slope & Prospect Heights</li>
+                                <li>Bay Ridge, Bensonhurst, Borough Park</li>
+                                <li>Coney Island & Brighton Beach</li>
+                                <li>Flatbush, Crown Heights, Bed-Stuy</li>
+                            </ul>
+                            <p>Fast, affordable rides to all Brooklyn neighborhoods from JFK Airport.</p>
+                        </div>
                         <a href="https://www.google.com/maps/place/Brooklyn,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View Brooklyn on Maps →</a>
                     </div>
                     <div class="borough-card" id="borough-queens">
@@ -490,6 +530,19 @@
                         </div>
                         <h3>Queens, NY</h3>
                         <p>$25 Flat Rate from JFK</p>
+                        <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
+                        <div class="borough-details">
+                            <p><strong>Pickup & Drop-off Areas:</strong></p>
+                            <ul>
+                                <li>Astoria & Long Island City</li>
+                                <li>Flushing & Bayside</li>
+                                <li>Jamaica & Richmond Hill</li>
+                                <li>Forest Hills & Rego Park</li>
+                                <li>Howard Beach & Ozone Park</li>
+                                <li>Rockaway Beach & Far Rockaway</li>
+                            </ul>
+                            <p>JFK is in Queens - enjoy our lowest rates for quick, convenient rides home.</p>
+                        </div>
                         <a href="https://www.google.com/maps/place/Queens,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View Queens on Maps →</a>
                     </div>
                     <div class="borough-card" id="borough-bronx">
@@ -498,6 +551,19 @@
                         </div>
                         <h3>The Bronx, NY</h3>
                         <p>$55 Flat Rate from JFK</p>
+                        <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
+                        <div class="borough-details">
+                            <p><strong>Pickup & Drop-off Areas:</strong></p>
+                            <ul>
+                                <li>Yankee Stadium & Concourse</li>
+                                <li>Fordham & Belmont</li>
+                                <li>Riverdale & Kingsbridge</li>
+                                <li>Co-op City & Pelham Bay</li>
+                                <li>Throgs Neck & City Island</li>
+                                <li>Bronx Zoo & Botanical Garden area</li>
+                            </ul>
+                            <p>Reliable flat rate service to all Bronx neighborhoods. No surge pricing ever.</p>
+                        </div>
                         <a href="https://www.google.com/maps/place/Bronx,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View Bronx on Maps →</a>
                     </div>
                     <div class="borough-card" id="borough-staten-island">
@@ -506,8 +572,22 @@
                         </div>
                         <h3>Staten Island, NY</h3>
                         <p>$65 Flat Rate from JFK</p>
+                        <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
+                        <div class="borough-details">
+                            <p><strong>Pickup & Drop-off Areas:</strong></p>
+                            <ul>
+                                <li>St. George & Ferry Terminal</li>
+                                <li>Tottenville & Great Kills</li>
+                                <li>New Dorp & Midland Beach</li>
+                                <li>Staten Island Mall area</li>
+                                <li>Snug Harbor & West Brighton</li>
+                                <li>All residential neighborhoods</li>
+                            </ul>
+                            <p>Direct service to Staten Island via Verrazzano Bridge. All tolls included.</p>
+                        </div>
                         <a href="https://www.google.com/maps/place/Staten+Island,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View Staten Island on Maps →</a>
                     </div>
+                </div>
                 </div>
             </section>
         </div>
@@ -670,6 +750,16 @@
             var details = btn.nextElementSibling;
             details.classList.toggle('open');
             btn.textContent = details.classList.contains('open') ? 'Show Less ▲' : 'Learn More ▼';
+        }
+        function toggleBorough(btn) {
+            var details = btn.nextElementSibling;
+            details.classList.toggle('open');
+            btn.textContent = details.classList.contains('open') ? 'Show Less ▲' : 'Learn More ▼';
+        }
+        function toggleAllAreas(btn) {
+            var wrapper = btn.nextElementSibling;
+            wrapper.classList.toggle('open');
+            btn.textContent = wrapper.classList.contains('open') ? 'Hide Service Areas ▲' : 'View All Service Areas ▼';
         }
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.services-menu')) {
