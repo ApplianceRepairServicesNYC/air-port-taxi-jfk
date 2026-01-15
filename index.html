@@ -24,7 +24,7 @@
         "priceRange": "$$",
         "address": {"@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US"},
         "telephone": "1-888-539-1234",
-        "areaServed": [{"@type": "City", "name": "Manhattan"}, {"@type": "City", "name": "Brooklyn"}, {"@type": "City", "name": "Queens"}, {"@type": "City", "name": "Bronx"}],
+        "areaServed": [{"@type": "City", "name": "Manhattan"}, {"@type": "City", "name": "Brooklyn"}, {"@type": "City", "name": "Queens"}, {"@type": "City", "name": "Bronx"}, {"@type": "City", "name": "Staten Island"}],
         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2847"}
     }
     </script>
@@ -73,11 +73,17 @@
         .hero-btn.secondary:hover { background: #a01830; }
         .features { padding: 60px 20px; background: var(--gray); }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .feature-card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .feature-card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; }
         .feature-card:hover { transform: translateY(-5px); }
         .feature-icon { font-size: 48px; margin-bottom: 15px; }
         .feature-card h3 { color: var(--primary); margin-bottom: 10px; }
-        .feature-card p { color: #666; margin: 0; }
+        .feature-card p { color: #666; margin: 0 0 15px; }
+        .feature-card .learn-more { display: inline-block; color: var(--accent); font-weight: 600; cursor: pointer; padding: 8px 16px; border: 2px solid var(--accent); border-radius: 6px; transition: all 0.3s; }
+        .feature-card .learn-more:hover { background: var(--accent); color: var(--primary); }
+        .feature-card .feature-details { display: none; text-align: left; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; color: #555; line-height: 1.7; }
+        .feature-card .feature-details.open { display: block; }
+        .feature-card .feature-details ul { margin: 10px 0; padding-left: 20px; }
+        .feature-card .feature-details li { margin-bottom: 8px; }
         section.alt { background: var(--gray); padding: 60px 0; }
         section h2 { text-align: center; font-size: 36px; margin-bottom: 40px; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 0 20px; }
@@ -163,11 +169,12 @@
                             <li><a href="#jfk-to-brooklyn">JFK to Brooklyn</a></li>
                             <li><a href="#jfk-to-queens">JFK to Queens</a></li>
                             <li><a href="#jfk-to-bronx">JFK to Bronx</a></li>
+                            <li><a href="#jfk-to-staten-island">JFK to Staten Island</a></li>
                             <li><a href="#pricing">Flat Rate Pricing</a></li>
                         </ul>
                     </div>
                 </div>
-                <a href="tel:+18885391234" class="nav-call-btn">📞 Call Now</a>
+                <a href="tel:+18885391234" class="nav-call-btn">📞 Call Toll-Free</a>
             </div>
         </div>
     </header>
@@ -190,31 +197,102 @@
                     <div class="feature-icon">💰</div>
                     <h3>Flat Rate Pricing</h3>
                     <p>No surprises - know your fare before you ride. Fixed prices to all NYC destinations.</p>
+                    <span class="learn-more" onclick="toggleFeature(this)">Learn More ▼</span>
+                    <div class="feature-details">
+                        <p>Our flat rate pricing ensures you know exactly what you'll pay before your trip begins. Unlike metered taxis that can vary based on traffic and route, our prices are fixed:</p>
+                        <ul>
+                            <li>Queens: $25 flat rate</li>
+                            <li>Brooklyn: $35 flat rate</li>
+                            <li>Manhattan: $52 flat rate</li>
+                            <li>Bronx: $55 flat rate</li>
+                            <li>Staten Island: $65 flat rate</li>
+                        </ul>
+                        <p>All tolls are included in our quoted prices. No surprises at the end of your ride.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🕐</div>
                     <h3>24/7 Availability</h3>
                     <p>We're always here when you need us. Day or night, rain or shine, 365 days a year.</p>
+                    <span class="learn-more" onclick="toggleFeature(this)">Learn More ▼</span>
+                    <div class="feature-details">
+                        <p>JFK Airport operates around the clock, and so do we. Whether your flight lands at 3 AM or departs at midnight, our taxi service is ready:</p>
+                        <ul>
+                            <li>Early morning flights? We're there.</li>
+                            <li>Red-eye arrivals? No problem.</li>
+                            <li>Holiday travel? Fully operational.</li>
+                            <li>Last-minute bookings accepted</li>
+                        </ul>
+                        <p>Call us anytime at 1-888-539-1234 or book online. We never close.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🚫</div>
                     <h3>No Hidden Fees</h3>
                     <p>The price we quote is the price you pay. No booking fees, no surge pricing, ever.</p>
+                    <span class="learn-more" onclick="toggleFeature(this)">Learn More ▼</span>
+                    <div class="feature-details">
+                        <p>We believe in transparent, honest pricing. Unlike rideshare apps with surge pricing, our rates never change based on demand:</p>
+                        <ul>
+                            <li>No surge pricing during peak hours</li>
+                            <li>No extra fees for holidays or bad weather</li>
+                            <li>No booking or service fees</li>
+                            <li>All tolls included in your quote</li>
+                            <li>No charge for flight delays</li>
+                        </ul>
+                        <p>What we quote is what you pay. Period.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">✈️</div>
                     <h3>Flight Tracking</h3>
                     <p>We monitor your flight and adjust pickup time automatically. No stress about delays.</p>
+                    <span class="learn-more" onclick="toggleFeature(this)">Learn More ▼</span>
+                    <div class="feature-details">
+                        <p>Our advanced flight tracking system monitors your flight in real-time so you never have to worry:</p>
+                        <ul>
+                            <li>We track delays and early arrivals</li>
+                            <li>Driver arrives when you land, not before</li>
+                            <li>No waiting charges for flight delays</li>
+                            <li>30 minutes free waiting time included</li>
+                            <li>Meet & greet at arrivals terminal</li>
+                        </ul>
+                        <p>Just provide your flight number when booking and we handle the rest.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🚗</div>
                     <h3>Professional Drivers</h3>
                     <p>Licensed, experienced drivers who know NYC inside and out. Safe, courteous service every trip.</p>
+                    <span class="learn-more" onclick="toggleFeature(this)">Learn More ▼</span>
+                    <div class="feature-details">
+                        <p>Every driver in our fleet is carefully vetted and trained to provide the best service:</p>
+                        <ul>
+                            <li>TLC licensed and insured</li>
+                            <li>Background checked and verified</li>
+                            <li>Extensive NYC knowledge</li>
+                            <li>Professional, courteous service</li>
+                            <li>Multilingual drivers available</li>
+                        </ul>
+                        <p>Our drivers know the fastest routes and will get you to your destination safely and efficiently.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🧳</div>
                     <h3>Luggage Assistance</h3>
                     <p>Our drivers help with your bags at pickup and drop-off. Travel stress-free with any amount of luggage.</p>
+                    <span class="learn-more" onclick="toggleFeature(this)">Learn More ▼</span>
+                    <div class="feature-details">
+                        <p>Traveling with luggage shouldn't be a hassle. Our drivers provide full assistance:</p>
+                        <ul>
+                            <li>Help loading and unloading bags</li>
+                            <li>Spacious sedans and SUVs available</li>
+                            <li>No extra charge for multiple bags</li>
+                            <li>Special handling for fragile items</li>
+                            <li>Car seats available upon request</li>
+                        </ul>
+                        <p>Whether you have one carry-on or five suitcases, we've got you covered.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -266,6 +344,17 @@
                         <h3>Popular Bronx Destinations:</h3>
                         <ul><li>Yankee Stadium</li><li>Bronx Zoo</li><li>Fordham</li><li>Riverdale</li><li>Co-op City</li><li>Pelham Bay</li></ul>
                         <p style="margin-top:15px;color:#555;">Our flat rate taxi service to the Bronx offers comfortable, reliable transportation at prices you can count on.</p>
+                    </div>
+                </div>
+                <div class="service" id="jfk-to-staten-island">
+                    <div class="service-image">
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
+                    </div>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK to Staten Island <span>From $65 Flat Rate</span></a>
+                    <div class="service-types">
+                        <h3>Popular Staten Island Destinations:</h3>
+                        <ul><li>St. George</li><li>Tottenville</li><li>Great Kills</li><li>New Dorp</li><li>Staten Island Mall</li><li>Snug Harbor</li></ul>
+                        <p style="margin-top:15px;color:#555;">Reliable flat rate taxi service from JFK to Staten Island. We'll get you home safely and affordably.</p>
                     </div>
                 </div>
                 <div class="service" id="laguardia">
@@ -377,6 +466,14 @@
                         <p>$55 Flat Rate from JFK</p>
                         <a href="https://www.google.com/maps/place/Bronx,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View Bronx on Maps →</a>
                     </div>
+                    <div class="borough-card" id="borough-staten-island">
+                        <div class="pin-icon">
+                            <svg viewBox="0 0 24 36" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#f5a623"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
+                        </div>
+                        <h3>Staten Island, NY</h3>
+                        <p>$65 Flat Rate from JFK</p>
+                        <a href="https://www.google.com/maps/place/Staten+Island,+New+York,+NY" target="_blank" rel="noopener" class="map-btn">View Staten Island on Maps →</a>
+                    </div>
                 </div>
             </section>
         </div>
@@ -414,6 +511,7 @@
                                 <option value="Brooklyn">Brooklyn Address</option>
                                 <option value="Queens">Queens Address</option>
                                 <option value="Bronx">Bronx Address</option>
+                                <option value="Staten Island">Staten Island Address</option>
                                 <option value="Other">Other Location</option>
                             </select>
                         </div>
@@ -533,6 +631,11 @@
         }
         function toggleService(btn) {
             btn.closest('.service').classList.toggle('expanded');
+        }
+        function toggleFeature(btn) {
+            var details = btn.nextElementSibling;
+            details.classList.toggle('open');
+            btn.textContent = details.classList.contains('open') ? 'Show Less ▲' : 'Learn More ▼';
         }
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.services-menu')) {
