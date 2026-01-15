@@ -50,15 +50,15 @@
         .services-dropdown li { margin-bottom: 6px; }
         .services-dropdown a { display: block; padding: 10px 15px; color: #333; text-decoration: none; border-radius: 8px; font-weight: 500; }
         .services-dropdown a:hover { background: var(--gray); color: var(--accent); }
-        @media (max-width: 768px) { .services-dropdown { width: calc(100vw - 40px); left: 20px !important; } .nav-call-btn { padding: 10px 20px; font-size: 15px; } }
+        @media (max-width: 768px) { .services-dropdown { width: calc(100vw - 40px); left: 20px !important; } .nav-call-btn { padding: 10px 20px; font-size: 15px; } .nav-wrapper { flex-direction: column; text-align: center; gap: 12px; } .nav-right { justify-content: center; width: 100%; } }
         .hero { background: url('assets/hero-taxi.png?v=3') center center no-repeat; background-size: cover; color: #1a1a2e; padding: 160px 20px 80px; text-align: center; min-height: 70vh; display: flex; align-items: center; justify-content: center; }
         .hero-overlay { background: rgba(255, 255, 255, 0.9); padding: 40px; border-radius: 16px; max-width: 700px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
         @media (max-width: 768px) {
-            .hero { background-size: contain; background-position: center top; padding-top: 320px; min-height: auto; background-color: #f5c518; }
+            .hero { background-size: contain; background-position: center 80px; padding-top: 350px; min-height: auto; background-color: #f5c518; }
             .hero-overlay { padding: 25px; margin: 0 15px; }
         }
         @media (max-width: 480px) {
-            .hero { padding-top: 260px; }
+            .hero { padding-top: 300px; background-position: center 70px; }
             .hero-overlay { padding: 20px; }
         }
         .hero-logo { max-width: 350px; width: 80%; margin-bottom: 30px; }
