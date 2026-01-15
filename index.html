@@ -73,12 +73,12 @@
         .hero-btn.secondary:hover { background: #a01830; }
         .features { padding: 60px 20px; background: var(--gray); }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .feature-card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .feature-card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; display: flex; flex-direction: column; }
         .feature-card:hover { transform: translateY(-5px); }
         .feature-icon { font-size: 48px; margin-bottom: 15px; }
         .feature-card h3 { color: var(--primary); margin-bottom: 10px; }
-        .feature-card p { color: #666; margin: 0 0 15px; }
-        .feature-card .learn-more { display: inline-block; color: var(--accent); font-weight: 600; cursor: pointer; padding: 8px 16px; border: 2px solid var(--accent); border-radius: 6px; transition: all 0.3s; }
+        .feature-card p { color: #666; margin: 0 0 15px; flex-grow: 1; }
+        .feature-card .learn-more { display: inline-block; color: var(--accent); font-weight: 600; cursor: pointer; padding: 8px 16px; border: 2px solid var(--accent); border-radius: 6px; transition: all 0.3s; align-self: center; margin-top: auto; }
         .feature-card .learn-more:hover { background: var(--accent); color: var(--primary); }
         .feature-card .feature-details { display: none; text-align: left; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; color: #555; line-height: 1.7; }
         .feature-card .feature-details.open { display: block; }
@@ -177,12 +177,12 @@
                     <div class="services-dropdown" id="servicesDropdown">
                         <ul>
                             <li><a href="#services">All Services</a></li>
-                            <li><a href="#jfk-to-manhattan">JFK to Manhattan</a></li>
-                            <li><a href="#jfk-to-brooklyn">JFK to Brooklyn</a></li>
-                            <li><a href="#jfk-to-queens">JFK to Queens</a></li>
-                            <li><a href="#jfk-to-bronx">JFK to Bronx</a></li>
-                            <li><a href="#jfk-to-staten-island">JFK to Staten Island</a></li>
-                            <li><a href="#long-island">JFK to Long Island</a></li>
+                            <li><a href="#jfk-to-manhattan">JFK ↔ Manhattan</a></li>
+                            <li><a href="#jfk-to-brooklyn">JFK ↔ Brooklyn</a></li>
+                            <li><a href="#jfk-to-queens">JFK ↔ Queens</a></li>
+                            <li><a href="#jfk-to-bronx">JFK ↔ Bronx</a></li>
+                            <li><a href="#jfk-to-staten-island">JFK ↔ Staten Island</a></li>
+                            <li><a href="#long-island">JFK ↔ Long Island</a></li>
                             <li><a href="#pricing">Flat Rate Pricing</a></li>
                         </ul>
                     </div>
@@ -209,7 +209,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>Flat Rate Pricing</h3>
-                    <p>No surprises - know your fare before you ride. Fixed prices to all NYC destinations.</p>
+                    <p>No surprises - know your fare before you ride. Fixed prices to and from JFK Airport.</p>
                     <span class="learn-more" onclick="toggleFeature(this)">Learn More ▼</span>
                     <div class="feature-details">
                         <p>Our flat rate pricing ensures you know exactly what you'll pay before your trip begins. Unlike metered taxis that can vary based on traffic and route, our prices are fixed:</p>
@@ -353,77 +353,77 @@
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK to Manhattan <span>From $52 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Manhattan <span>From $52 Flat Rate</span></a>
                     <div class="service-types">
                         <h3>Popular Manhattan Destinations:</h3>
                         <ul><li>Times Square</li><li>Midtown</li><li>Downtown</li><li>Upper East Side</li><li>Chelsea</li><li>SoHo</li><li>Financial District</li></ul>
-                        <p style="margin-top:15px;color:#555;">Our flat rate taxi service from JFK Airport to Manhattan offers the most convenient and affordable way to travel. All tolls included.</p>
+                        <p style="margin-top:15px;color:#555;">Flat rate taxi service to and from JFK Airport and Manhattan. Same price both ways - all tolls included.</p>
                     </div>
                 </div>
                 <div class="service" id="jfk-to-brooklyn">
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK to Brooklyn <span>From $35 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Brooklyn <span>From $35 Flat Rate</span></a>
                     <div class="service-types">
                         <h3>Popular Brooklyn Destinations:</h3>
                         <ul><li>Downtown Brooklyn</li><li>Williamsburg</li><li>DUMBO</li><li>Park Slope</li><li>Brooklyn Heights</li><li>Bay Ridge</li></ul>
-                        <p style="margin-top:15px;color:#555;">Brooklyn is just a short ride from JFK Airport. Our flat rate taxi service makes getting to any Brooklyn neighborhood easy and affordable.</p>
+                        <p style="margin-top:15px;color:#555;">Flat rate taxi service to and from JFK Airport and Brooklyn. Same price both ways - all tolls included.</p>
                     </div>
                 </div>
                 <div class="service" id="jfk-to-queens">
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK to Queens <span>From $25 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Queens <span>From $25 Flat Rate</span></a>
                     <div class="service-types">
                         <h3>Popular Queens Destinations:</h3>
                         <ul><li>Astoria</li><li>Long Island City</li><li>Flushing</li><li>Jamaica</li><li>Forest Hills</li><li>Bayside</li></ul>
-                        <p style="margin-top:15px;color:#555;">JFK Airport is located in Queens, making many Queens destinations our quickest and most affordable rides.</p>
+                        <p style="margin-top:15px;color:#555;">Flat rate taxi service to and from JFK Airport and Queens. Same price both ways - our quickest and most affordable rides.</p>
                     </div>
                 </div>
                 <div class="service" id="jfk-to-bronx">
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK to Bronx <span>From $55 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Bronx <span>From $55 Flat Rate</span></a>
                     <div class="service-types">
                         <h3>Popular Bronx Destinations:</h3>
                         <ul><li>Yankee Stadium</li><li>Bronx Zoo</li><li>Fordham</li><li>Riverdale</li><li>Co-op City</li><li>Pelham Bay</li></ul>
-                        <p style="margin-top:15px;color:#555;">Our flat rate taxi service to the Bronx offers comfortable, reliable transportation at prices you can count on.</p>
+                        <p style="margin-top:15px;color:#555;">Flat rate taxi service to and from JFK Airport and the Bronx. Same price both ways - all tolls included.</p>
                     </div>
                 </div>
                 <div class="service" id="jfk-to-staten-island">
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK to Staten Island <span>From $65 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Staten Island <span>From $65 Flat Rate</span></a>
                     <div class="service-types">
                         <h3>Popular Staten Island Destinations:</h3>
                         <ul><li>St. George</li><li>Tottenville</li><li>Great Kills</li><li>New Dorp</li><li>Staten Island Mall</li><li>Snug Harbor</li></ul>
-                        <p style="margin-top:15px;color:#555;">Reliable flat rate taxi service from JFK to Staten Island. We'll get you home safely and affordably.</p>
+                        <p style="margin-top:15px;color:#555;">Flat rate taxi service to and from JFK Airport and Staten Island. Same price both ways - all tolls included.</p>
                     </div>
                 </div>
                 <div class="service" id="laguardia">
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><path d="M60 20L90 50H75V90H45V50H30L60 20Z" fill="#f5a623"/><rect x="35" y="75" width="50" height="25" rx="4" fill="#1a1a2e"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK to LaGuardia <span>From $35 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ LaGuardia <span>From $35 Flat Rate</span></a>
                     <div class="service-types">
                         <h3>Airport Transfer Service:</h3>
                         <ul><li>All Terminals</li><li>Flight Monitoring</li><li>Meet & Greet</li><li>Luggage Assistance</li></ul>
-                        <p style="margin-top:15px;color:#555;">Need to get between airports? Our inter-airport transfer service is fast, reliable, and affordable.</p>
+                        <p style="margin-top:15px;color:#555;">Inter-airport transfer service between JFK and LaGuardia. Same price both ways - fast and reliable.</p>
                     </div>
                 </div>
                 <div class="service" id="long-island">
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK to Long Island <span>From $45 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Long Island <span>From $45 Flat Rate</span></a>
                     <div class="service-types">
                         <h3>Long Island Destinations:</h3>
                         <ul><li>Nassau County</li><li>Suffolk County</li><li>Garden City</li><li>Hempstead</li><li>Huntington</li><li>Hamptons</li></ul>
-                        <p style="margin-top:15px;color:#555;">Convenient taxi service from JFK to all Long Island destinations with flat rates.</p>
+                        <p style="margin-top:15px;color:#555;">Flat rate taxi service to and from JFK Airport and Long Island. Same price both ways - all tolls included.</p>
                     </div>
                 </div>
             </div>
