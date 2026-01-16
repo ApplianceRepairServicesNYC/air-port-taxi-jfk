@@ -18,7 +18,6 @@
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "additionalType": "https://schema.org/TaxiService",
         "name": "JFK Airport Taxi Service",
         "@id": "https://airporttaxijfk.com/",
         "url": "https://airporttaxijfk.com/",
@@ -37,48 +36,16 @@
             {"@type": "City", "name": "Staten Island"},
             {"@type": "City", "name": "Long Island"}
         ],
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "00:00",
-                "closes": "23:59"
-            }
-        ],
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "bestRating": "5",
-            "worstRating": "1",
             "reviewCount": "2847"
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "JFK Airport Taxi Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "JFK to Manhattan Taxi"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "JFK to Brooklyn Taxi"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Group Taxi Service",
-                        "description": "Discounted rates for groups of 5 or more passengers"
-                    }
-                }
-            ]
         }
     }
     </script>
