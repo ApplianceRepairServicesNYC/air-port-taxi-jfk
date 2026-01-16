@@ -478,9 +478,9 @@
     <section class="alt" id="areas">
         <div class="container">
             <section class="borough-map-section">
-                <h2>NYC Service Areas</h2>
+                <h2>Airport Taxi Routes</h2>
                 <p>We provide flat rate taxi service for pickups and drop-offs throughout all five NYC boroughs. Whether you're heading to JFK Airport or arriving from a flight, our drivers will get you there safely and affordably - 24 hours a day, 7 days a week.</p>
-                <div class="view-areas-btn" onclick="toggleAllAreas(this)">View All Service Areas ▼</div>
+                <div class="view-areas-btn" onclick="toggleAllAreas(this)">View All Airport Taxi Routes ▼</div>
                 <div class="borough-cards-wrapper">
                 <div class="borough-cards-grid">
                     <div class="borough-card" id="borough-manhattan">
@@ -751,7 +751,7 @@
                         <li><a href="#services">All Services</a></li>
                         <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#book">Reserve a Ride</a></li>
-                        <li><a href="#areas">Service Areas</a></li>
+                        <li><a href="#areas">Airport Taxi Routes</a></li>
                     </ul>
                 </div>
             </div>
@@ -781,7 +781,7 @@
         function toggleAllAreas(btn) {
             var wrapper = btn.nextElementSibling;
             wrapper.classList.toggle('open');
-            btn.textContent = wrapper.classList.contains('open') ? 'Hide Service Areas ▲' : 'View All Service Areas ▼';
+            btn.textContent = wrapper.classList.contains('open') ? 'Hide Airport Taxi Routes ▲' : 'View All Airport Taxi Routes ▼';
         }
         function revealPhone(el) {
             var p1 = atob(el.getAttribute('data-p1'));
