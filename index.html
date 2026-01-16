@@ -23,7 +23,7 @@
         "url": "https://airporttaxijfk.com/",
         "priceRange": "$$",
         "address": {"@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US"},
-        "telephone": "718-717-1706",
+        "telephone": "",
         "areaServed": [{"@type": "City", "name": "Manhattan"}, {"@type": "City", "name": "Brooklyn"}, {"@type": "City", "name": "Queens"}, {"@type": "City", "name": "Bronx"}, {"@type": "City", "name": "Staten Island"}],
         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2847"}
     }
@@ -42,7 +42,7 @@
         .nav-right { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
         .services-btn { color: white; font-weight: 600; cursor: pointer; padding: 12px 20px; border-radius: 6px; background: rgba(255,255,255,0.1); }
         .services-btn:hover { background: rgba(255,255,255,0.2); }
-        .nav-call-btn { background: var(--accent); color: var(--primary); padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 17px; }
+        .nav-call-btn { background: var(--accent); color: var(--primary); padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 17px; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
         .nav-call-btn:hover { background: #e6951a; }
         .services-dropdown { display: none; position: fixed; top: 70px; width: 400px; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.25); z-index: 1001; padding: 20px; }
         .services-dropdown.open { display: block; }
@@ -66,7 +66,7 @@
         .hero h1 span { color: #c41e3a; }
         .hero p { font-size: 18px; max-width: 700px; margin: 0 auto 30px; color: #333; }
         .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .hero-btn { padding: 16px 36px; border-radius: 8px; font-weight: 700; font-size: 17px; text-decoration: none; min-height: 48px; }
+        .hero-btn { padding: 16px 36px; border-radius: 8px; font-weight: 700; font-size: 17px; text-decoration: none; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
         .hero-btn.primary { background: #1a1a2e; color: #fff; }
         .hero-btn.primary:hover { background: #2d2d4a; }
         .hero-btn.secondary { background: #c41e3a; color: white; border: none; }
@@ -111,7 +111,7 @@
         .price-card ul li { padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
         .price-card.featured ul li { border-color: rgba(255,255,255,0.2); }
         .price-card ul li::before { content: "✓"; color: var(--accent); margin-right: 10px; font-weight: bold; }
-        .book-btn { display: inline-block; padding: 14px 32px; background: var(--accent); color: var(--primary); border-radius: 8px; font-weight: 700; text-decoration: none; min-height: 48px; }
+        .book-btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; padding: 14px 32px; background: var(--accent); color: var(--primary); border-radius: 8px; font-weight: 700; text-decoration: none; min-height: 48px; }
         .book-btn:hover { background: #e6951a; }
         .borough-map-section { padding: 40px 20px; background: #f8f9fa; }
         .borough-map-section h2 { font-size: 32px; text-align: center; color: var(--primary); margin-bottom: 10px; }
@@ -187,7 +187,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="javascript:void(0)" class="nav-call-btn" onclick="revealPhone(this)" data-phone="7187171706">📞 Call Now</a>
+                <a href="javascript:void(0)" class="nav-call-btn" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==">📞 Call Now</a>
             </div>
         </div>
     </header>
@@ -197,8 +197,8 @@
             <h1>JFK Airport Taxi Service - <span>24/7 Flat Rate</span></h1>
             <p>Reliable, affordable taxi service to and from JFK Airport. No hidden fees, no surge pricing - just honest flat rates. Available around the clock, every day of the year.</p>
             <div class="hero-buttons">
-                <a href="#book" class="hero-btn primary">Book Your Ride</a>
-                <a href="javascript:void(0)" class="hero-btn secondary" onclick="revealPhone(this)" data-phone="7187171706">📞 Call Now</a>
+                <a href="#book" class="hero-btn primary">Reserve Your Ride</a>
+                <a href="javascript:void(0)" class="hero-btn secondary" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==">📞 Call Now</a>
             </div>
         </div>
     </section>
@@ -469,7 +469,7 @@
                         <li>Questions answered</li>
                         <li>Group rates available</li>
                     </ul>
-                    <a href="javascript:void(0)" class="book-btn" onclick="revealPhone(this)" data-phone="7187171706">📞 Call Now</a>
+                    <a href="javascript:void(0)" class="book-btn" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==">📞 Call Now</a>
                 </div>
             </div>
         </div>
@@ -617,7 +617,7 @@
 
     <section class="contact-section" id="book">
         <div class="container">
-            <h2>Book Your Ride</h2>
+            <h2>Reserve Your Ride</h2>
             <div class="contact-grid">
                 <div class="contact-form">
                     <h3>Request a Taxi</h3>
@@ -686,7 +686,7 @@
                         <div class="icon">📞</div>
                         <div>
                             <h4>Call Us 24/7</h4>
-                            <p><a href="javascript:void(0)" onclick="revealPhone(this)" data-phone="7187171706" style="color: var(--accent); text-decoration: none; cursor: pointer;">Click to Reveal Number</a></p>
+                            <p><a href="javascript:void(0)" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==" style="color: var(--accent); text-decoration: none; cursor: pointer;">Click to Reveal Number</a></p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -732,7 +732,7 @@
                 <div class="footer-column">
                     <h3>JFK Airport Taxi Service</h3>
                     <p style="color: #ccc; margin-bottom: 15px;">Your trusted flat rate taxi service to and from JFK Airport. No hidden fees, no surge pricing - just reliable transportation 24/7.</p>
-                    <p style="color: #ccc;">📞 <a href="javascript:void(0)" onclick="revealPhone(this)" data-phone="7187171706" style="color: var(--accent); cursor: pointer;">Click to Reveal Number</a></p>
+                    <p style="color: #ccc;">📞 <a href="javascript:void(0)" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==" style="color: var(--accent); cursor: pointer;">Click to Reveal Number</a></p>
                 </div>
                 <div class="footer-column">
                     <h3>Services</h3>
@@ -750,7 +750,7 @@
                     <ul>
                         <li><a href="#services">All Services</a></li>
                         <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#book">Book a Ride</a></li>
+                        <li><a href="#book">Reserve a Ride</a></li>
                         <li><a href="#areas">Service Areas</a></li>
                     </ul>
                 </div>
@@ -784,8 +784,11 @@
             btn.textContent = wrapper.classList.contains('open') ? 'Hide Service Areas ▲' : 'View All Service Areas ▼';
         }
         function revealPhone(el) {
-            var phone = el.getAttribute('data-phone');
-            var formatted = '(' + phone.substring(0,3) + ') ' + phone.substring(3,6) + '-' + phone.substring(6);
+            var p1 = atob(el.getAttribute('data-p1'));
+            var p2 = atob(el.getAttribute('data-p2'));
+            var p3 = atob(el.getAttribute('data-p3'));
+            var phone = p1 + p2 + p3;
+            var formatted = '(' + p1 + ') ' + p2 + '-' + p3;
             el.textContent = formatted;
             el.href = 'tel:+1' + phone;
             el.onclick = null;
