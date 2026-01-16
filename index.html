@@ -148,6 +148,16 @@
         .form-group textarea { resize: vertical; min-height: 100px; }
         .submit-btn { width: 100%; padding: 16px; background: var(--accent); color: var(--primary); border: none; border-radius: 8px; font-size: 18px; font-weight: 700; cursor: pointer; min-height: 48px; }
         .submit-btn:hover { background: #e6951a; }
+        .how-it-works-btn { display: block; width: 100%; padding: 16px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; text-align: center; margin-top: 15px; transition: all 0.3s; }
+        .how-it-works-btn:hover { background: #2d2d4a; }
+        .how-it-works-details { display: none; background: white; border-radius: 12px; padding: 25px; margin-top: 15px; border: 2px solid var(--primary); }
+        .how-it-works-details.open { display: block; }
+        .how-it-works-details h4 { color: var(--primary); margin: 0 0 20px; font-size: 18px; }
+        .how-step { display: flex; gap: 15px; margin-bottom: 18px; align-items: flex-start; }
+        .how-step:last-child { margin-bottom: 0; }
+        .step-num { background: var(--accent); color: var(--primary); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .how-step p { margin: 5px 0 0; color: #666; font-size: 14px; line-height: 1.5; }
+        .how-step strong { color: var(--primary); }
         .contact-info h3 { margin-bottom: 20px; }
         .contact-info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
         .contact-info-item .icon { font-size: 24px; color: var(--accent); }
@@ -679,6 +689,45 @@
                         </div>
                         <button type="submit" class="submit-btn">Request Taxi</button>
                     </form>
+                    <div class="how-it-works-btn" onclick="toggleHowItWorks(this)">How It Works ▼</div>
+                    <div class="how-it-works-details">
+                        <h4>Reservation Process</h4>
+                        <div class="how-step">
+                            <span class="step-num">1</span>
+                            <div>
+                                <strong>Submit Your Request</strong>
+                                <p>Fill out the form above with your pickup details, destination, and preferred date/time.</p>
+                            </div>
+                        </div>
+                        <div class="how-step">
+                            <span class="step-num">2</span>
+                            <div>
+                                <strong>Receive Confirmation</strong>
+                                <p>We'll contact you within <strong>15-30 minutes</strong> (during business hours) or within 2 hours for overnight requests to confirm your reservation and provide your flat rate quote.</p>
+                            </div>
+                        </div>
+                        <div class="how-step">
+                            <span class="step-num">3</span>
+                            <div>
+                                <strong>Driver Assignment</strong>
+                                <p>On your travel day, you'll receive driver details including name, vehicle info, and contact number via text/email.</p>
+                            </div>
+                        </div>
+                        <div class="how-step">
+                            <span class="step-num">4</span>
+                            <div>
+                                <strong>Meet Your Driver</strong>
+                                <p>For airport pickups, your driver will meet you at the terminal with a name sign. For home pickups, they'll arrive at your door.</p>
+                            </div>
+                        </div>
+                        <div class="how-step">
+                            <span class="step-num">5</span>
+                            <div>
+                                <strong>Pay Upon Arrival</strong>
+                                <p>Pay the flat rate quoted at confirmation. Cash, credit cards, and digital payments accepted. No surprises.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-info">
                     <h3>Contact Information</h3>
@@ -792,6 +841,11 @@
             el.textContent = formatted;
             el.href = 'tel:+1' + phone;
             el.onclick = null;
+        }
+        function toggleHowItWorks(btn) {
+            var details = btn.nextElementSibling;
+            details.classList.toggle('open');
+            btn.textContent = details.classList.contains('open') ? 'How It Works ▲' : 'How It Works ▼';
         }
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.services-menu')) {
