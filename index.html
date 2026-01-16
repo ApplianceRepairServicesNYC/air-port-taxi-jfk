@@ -23,7 +23,7 @@
         "url": "https://airporttaxijfk.com/",
         "priceRange": "$$",
         "address": {"@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US"},
-        "telephone": "1-888-539-1234",
+        "telephone": "718-717-1706",
         "areaServed": [{"@type": "City", "name": "Manhattan"}, {"@type": "City", "name": "Brooklyn"}, {"@type": "City", "name": "Queens"}, {"@type": "City", "name": "Bronx"}, {"@type": "City", "name": "Staten Island"}],
         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2847"}
     }
@@ -177,17 +177,17 @@
                     <div class="services-dropdown" id="servicesDropdown">
                         <ul>
                             <li><a href="#services">All Services</a></li>
-                            <li><a href="#jfk-to-manhattan">JFK ↔ Manhattan</a></li>
-                            <li><a href="#jfk-to-brooklyn">JFK ↔ Brooklyn</a></li>
-                            <li><a href="#jfk-to-queens">JFK ↔ Queens</a></li>
-                            <li><a href="#jfk-to-bronx">JFK ↔ Bronx</a></li>
-                            <li><a href="#jfk-to-staten-island">JFK ↔ Staten Island</a></li>
-                            <li><a href="#long-island">JFK ↔ Long Island</a></li>
+                            <li><a href="#jfk-to-manhattan">JFK ↔ Manhattan (To & From)</a></li>
+                            <li><a href="#jfk-to-brooklyn">JFK ↔ Brooklyn (To & From)</a></li>
+                            <li><a href="#jfk-to-queens">JFK ↔ Queens (To & From)</a></li>
+                            <li><a href="#jfk-to-bronx">JFK ↔ Bronx (To & From)</a></li>
+                            <li><a href="#jfk-to-staten-island">JFK ↔ Staten Island (To & From)</a></li>
+                            <li><a href="#long-island">JFK ↔ Long Island (To & From)</a></li>
                             <li><a href="#pricing">Flat Rate Pricing</a></li>
                         </ul>
                     </div>
                 </div>
-                <a href="tel:+18885391234" class="nav-call-btn">📞 Call Toll-Free</a>
+                <a href="javascript:void(0)" class="nav-call-btn" onclick="revealPhone(this)" data-phone="7187171706">📞 Call Now</a>
             </div>
         </div>
     </header>
@@ -198,7 +198,7 @@
             <p>Reliable, affordable taxi service to and from JFK Airport. No hidden fees, no surge pricing - just honest flat rates. Available around the clock, every day of the year.</p>
             <div class="hero-buttons">
                 <a href="#book" class="hero-btn primary">Book Your Ride</a>
-                <a href="tel:+18885391234" class="hero-btn secondary">Call Toll-Free</a>
+                <a href="javascript:void(0)" class="hero-btn secondary" onclick="revealPhone(this)" data-phone="7187171706">📞 Call Now</a>
             </div>
         </div>
     </section>
@@ -212,15 +212,15 @@
                     <p>No surprises - know your fare before you ride. Fixed prices to and from JFK Airport.</p>
                     <span class="learn-more" onclick="toggleFeature(this)">Learn More ▼</span>
                     <div class="feature-details">
-                        <p>Our flat rate pricing ensures you know exactly what you'll pay before your trip begins. Unlike metered taxis that can vary based on traffic and route, our prices are fixed:</p>
+                        <p>Our flat rate pricing ensures you know exactly what you'll pay before your trip begins. Unlike metered taxis that can vary based on traffic and route, our prices are fixed and quoted upfront:</p>
                         <ul>
-                            <li>Queens: $25 flat rate</li>
-                            <li>Brooklyn: $35 flat rate</li>
-                            <li>Manhattan: $52 flat rate</li>
-                            <li>Bronx: $55 flat rate</li>
-                            <li>Staten Island: $65 flat rate</li>
+                            <li>Instant quote before you book</li>
+                            <li>Same price to and from JFK</li>
+                            <li>No surge pricing ever</li>
+                            <li>All tolls included</li>
+                            <li>Price locked in at booking</li>
                         </ul>
-                        <p>All tolls are included in our quoted prices. No surprises at the end of your ride.</p>
+                        <p>Call or book online for your free instant quote. No surprises at the end of your ride.</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -236,7 +236,7 @@
                             <li>Holiday travel? Fully operational.</li>
                             <li>Last-minute bookings accepted</li>
                         </ul>
-                        <p>Call us anytime at 1-888-539-1234 or book online. We never close.</p>
+                        <p>Call us anytime or book online. We never close.</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -353,7 +353,7 @@
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Manhattan (To & From) <span>From $52 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Manhattan (To & From) <span>Flat Rate Quote</span></a>
                     <div class="service-types">
                         <h3>Popular Manhattan Destinations:</h3>
                         <ul><li>Times Square</li><li>Midtown</li><li>Downtown</li><li>Upper East Side</li><li>Chelsea</li><li>SoHo</li><li>Financial District</li></ul>
@@ -364,7 +364,7 @@
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Brooklyn (To & From) <span>From $35 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Brooklyn (To & From) <span>Flat Rate Quote</span></a>
                     <div class="service-types">
                         <h3>Popular Brooklyn Destinations:</h3>
                         <ul><li>Downtown Brooklyn</li><li>Williamsburg</li><li>DUMBO</li><li>Park Slope</li><li>Brooklyn Heights</li><li>Bay Ridge</li></ul>
@@ -375,7 +375,7 @@
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Queens (To & From) <span>From $25 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Queens (To & From) <span>Flat Rate Quote</span></a>
                     <div class="service-types">
                         <h3>Popular Queens Destinations:</h3>
                         <ul><li>Astoria</li><li>Long Island City</li><li>Flushing</li><li>Jamaica</li><li>Forest Hills</li><li>Bayside</li></ul>
@@ -386,7 +386,7 @@
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Bronx (To & From) <span>From $55 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Bronx (To & From) <span>Flat Rate Quote</span></a>
                     <div class="service-types">
                         <h3>Popular Bronx Destinations:</h3>
                         <ul><li>Yankee Stadium</li><li>Bronx Zoo</li><li>Fordham</li><li>Riverdale</li><li>Co-op City</li><li>Pelham Bay</li></ul>
@@ -397,7 +397,7 @@
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/><rect x="45" y="25" width="30" height="20" rx="4" fill="#f5a623"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Staten Island (To & From) <span>From $65 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Staten Island (To & From) <span>Flat Rate Quote</span></a>
                     <div class="service-types">
                         <h3>Popular Staten Island Destinations:</h3>
                         <ul><li>St. George</li><li>Tottenville</li><li>Great Kills</li><li>New Dorp</li><li>Staten Island Mall</li><li>Snug Harbor</li></ul>
@@ -408,7 +408,7 @@
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><path d="M60 20L90 50H75V90H45V50H30L60 20Z" fill="#f5a623"/><rect x="35" y="75" width="50" height="25" rx="4" fill="#1a1a2e"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ LaGuardia (To & From) <span>From $35 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ LaGuardia (To & From) <span>Flat Rate Quote</span></a>
                     <div class="service-types">
                         <h3>Airport Transfer Service:</h3>
                         <ul><li>All Terminals</li><li>Flight Monitoring</li><li>Meet & Greet</li><li>Luggage Assistance</li></ul>
@@ -419,7 +419,7 @@
                     <div class="service-image">
                         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><rect x="20" y="40" width="80" height="60" rx="8" fill="#1a1a2e"/><rect x="30" y="50" width="25" height="20" rx="4" fill="#f5a623"/><rect x="65" y="50" width="25" height="20" rx="4" fill="#f5a623"/><circle cx="35" cy="100" r="12" fill="#333"/><circle cx="85" cy="100" r="12" fill="#333"/></svg>
                     </div>
-                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Long Island (To & From) <span>From $45 Flat Rate</span></a>
+                    <a href="#" class="learn-more-btn" onclick="toggleService(this); return false;">JFK ↔ Long Island (To & From) <span>Flat Rate Quote</span></a>
                     <div class="service-types">
                         <h3>Long Island Destinations:</h3>
                         <ul><li>Nassau County</li><li>Suffolk County</li><li>Garden City</li><li>Hempstead</li><li>Huntington</li><li>Hamptons</li></ul>
@@ -435,41 +435,41 @@
             <h2>Flat Rate Pricing - No Hidden Fees</h2>
             <div class="pricing-grid">
                 <div class="price-card">
-                    <h3>Queens</h3>
-                    <div class="price">$25<span>/one way</span></div>
+                    <h3>Instant Quote</h3>
+                    <div class="price">Free<span>Upfront</span></div>
                     <ul>
                         <li>Flat rate - no meter</li>
                         <li>All tolls included</li>
-                        <li>Meet & greet service</li>
-                        <li>Flight tracking</li>
-                        <li>30 min free wait time</li>
+                        <li>Price locked at booking</li>
+                        <li>No surge pricing</li>
+                        <li>Same price both ways</li>
                     </ul>
-                    <a href="#book" class="book-btn">Book Now</a>
+                    <a href="#book" class="book-btn">Get Quote</a>
                 </div>
                 <div class="price-card featured">
-                    <h3>Manhattan</h3>
-                    <div class="price">$52<span>/one way</span></div>
+                    <h3>What's Included</h3>
+                    <div class="price">All-In<span>Pricing</span></div>
                     <ul>
-                        <li>Flat rate - no meter</li>
-                        <li>All tolls included</li>
                         <li>Meet & greet service</li>
                         <li>Flight tracking</li>
                         <li>30 min free wait time</li>
-                        <li>All neighborhoods</li>
+                        <li>Luggage assistance</li>
+                        <li>Child seats on request</li>
+                        <li>24/7 availability</li>
                     </ul>
                     <a href="#book" class="book-btn">Book Now</a>
                 </div>
                 <div class="price-card">
-                    <h3>Brooklyn</h3>
-                    <div class="price">$35<span>/one way</span></div>
+                    <h3>Call For Quote</h3>
+                    <div class="price">24/7<span>Available</span></div>
                     <ul>
-                        <li>Flat rate - no meter</li>
-                        <li>All tolls included</li>
-                        <li>Meet & greet service</li>
-                        <li>Flight tracking</li>
-                        <li>30 min free wait time</li>
+                        <li>Speak to a real person</li>
+                        <li>Instant price quote</li>
+                        <li>Book over the phone</li>
+                        <li>Questions answered</li>
+                        <li>Group rates available</li>
                     </ul>
-                    <a href="#book" class="book-btn">Book Now</a>
+                    <a href="javascript:void(0)" class="book-btn" onclick="revealPhone(this)" data-phone="7187171706">📞 Call Now</a>
                 </div>
             </div>
         </div>
@@ -488,7 +488,7 @@
                             <svg viewBox="0 0 24 36" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#f5a623"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
                         </div>
                         <h3>Manhattan, NY</h3>
-                        <p>$52 Flat Rate from JFK</p>
+                        <p>Flat Rate Service To & From JFK</p>
                         <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
                         <div class="borough-details">
                             <p><strong>Pickup & Drop-off Areas:</strong></p>
@@ -509,7 +509,7 @@
                             <svg viewBox="0 0 24 36" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#f5a623"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
                         </div>
                         <h3>Brooklyn, NY</h3>
-                        <p>$35 Flat Rate from JFK</p>
+                        <p>Flat Rate Service To & From JFK</p>
                         <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
                         <div class="borough-details">
                             <p><strong>Pickup & Drop-off Areas:</strong></p>
@@ -530,7 +530,7 @@
                             <svg viewBox="0 0 24 36" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#f5a623"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
                         </div>
                         <h3>Queens, NY</h3>
-                        <p>$25 Flat Rate from JFK</p>
+                        <p>Flat Rate Service To & From JFK</p>
                         <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
                         <div class="borough-details">
                             <p><strong>Pickup & Drop-off Areas:</strong></p>
@@ -551,7 +551,7 @@
                             <svg viewBox="0 0 24 36" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#f5a623"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
                         </div>
                         <h3>The Bronx, NY</h3>
-                        <p>$55 Flat Rate from JFK</p>
+                        <p>Flat Rate Service To & From JFK</p>
                         <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
                         <div class="borough-details">
                             <p><strong>Pickup & Drop-off Areas:</strong></p>
@@ -572,7 +572,7 @@
                             <svg viewBox="0 0 24 36" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#f5a623"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
                         </div>
                         <h3>Staten Island, NY</h3>
-                        <p>$65 Flat Rate from JFK</p>
+                        <p>Flat Rate Service To & From JFK</p>
                         <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
                         <div class="borough-details">
                             <p><strong>Pickup & Drop-off Areas:</strong></p>
@@ -593,7 +593,7 @@
                             <svg viewBox="0 0 24 36" fill="none"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z" fill="#f5a623"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
                         </div>
                         <h3>Long Island, NY</h3>
-                        <p>$45+ Flat Rate from JFK</p>
+                        <p>Flat Rate Service To & From JFK</p>
                         <span class="learn-more-borough" onclick="toggleBorough(this)">Learn More ▼</span>
                         <div class="borough-details">
                             <p><strong>Pickup & Drop-off Areas:</strong></p>
@@ -686,7 +686,7 @@
                         <div class="icon">📞</div>
                         <div>
                             <h4>Call Us 24/7</h4>
-                            <p><a href="tel:+18885391234" style="color: var(--accent); text-decoration: none;">1-888-539-1234</a></p>
+                            <p><a href="javascript:void(0)" onclick="revealPhone(this)" data-phone="7187171706" style="color: var(--accent); text-decoration: none; cursor: pointer;">Click to Reveal Number</a></p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -732,7 +732,7 @@
                 <div class="footer-column">
                     <h3>JFK Airport Taxi Service</h3>
                     <p style="color: #ccc; margin-bottom: 15px;">Your trusted flat rate taxi service to and from JFK Airport. No hidden fees, no surge pricing - just reliable transportation 24/7.</p>
-                    <p style="color: #ccc;">📞 <a href="tel:+18885391234" style="color: var(--accent);">1-888-539-1234</a></p>
+                    <p style="color: #ccc;">📞 <a href="javascript:void(0)" onclick="revealPhone(this)" data-phone="7187171706" style="color: var(--accent); cursor: pointer;">Click to Reveal Number</a></p>
                 </div>
                 <div class="footer-column">
                     <h3>Services</h3>
@@ -783,6 +783,13 @@
             wrapper.classList.toggle('open');
             btn.textContent = wrapper.classList.contains('open') ? 'Hide Service Areas ▲' : 'View All Service Areas ▼';
         }
+        function revealPhone(el) {
+            var phone = el.getAttribute('data-phone');
+            var formatted = '(' + phone.substring(0,3) + ') ' + phone.substring(3,6) + '-' + phone.substring(6);
+            el.textContent = formatted;
+            el.href = 'tel:+1' + phone;
+            el.onclick = null;
+        }
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.services-menu')) {
                 document.getElementById('servicesDropdown').classList.remove('open');
@@ -790,7 +797,7 @@
         });
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you! We will contact you shortly to confirm your booking. For immediate assistance, please call 1-888-539-1234.');
+            alert('Thank you! We will contact you shortly to confirm your booking. For immediate assistance, please call us.');
         });
         document.getElementById('date').min = new Date().toISOString().split('T')[0];
     </script>
