@@ -17,15 +17,69 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "TaxiService",
+        "@type": "LocalBusiness",
+        "additionalType": "https://schema.org/TaxiService",
         "name": "JFK Airport Taxi Service",
         "@id": "https://airporttaxijfk.com/",
         "url": "https://airporttaxijfk.com/",
         "priceRange": "$$",
-        "address": {"@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US"},
-        "telephone": "",
-        "areaServed": [{"@type": "City", "name": "Manhattan"}, {"@type": "City", "name": "Brooklyn"}, {"@type": "City", "name": "Queens"}, {"@type": "City", "name": "Bronx"}, {"@type": "City", "name": "Staten Island"}],
-        "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2847"}
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New York",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Manhattan"},
+            {"@type": "City", "name": "Brooklyn"},
+            {"@type": "City", "name": "Queens"},
+            {"@type": "City", "name": "Bronx"},
+            {"@type": "City", "name": "Staten Island"},
+            {"@type": "City", "name": "Long Island"}
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "worstRating": "1",
+            "reviewCount": "2847"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "JFK Airport Taxi Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "JFK to Manhattan Taxi"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "JFK to Brooklyn Taxi"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Group Taxi Service",
+                        "description": "Discounted rates for groups of 5 or more passengers"
+                    }
+                }
+            ]
+        }
     }
     </script>
     <style>
@@ -99,11 +153,14 @@
         .service-types ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 0 15px 0; }
         .service-types ul li { background: white; padding: 6px 12px; border-radius: 20px; font-size: 13px; border: 1px solid #e0e0e0; }
         .pricing { padding: 60px 20px; background: white; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
         .price-card { background: var(--gray); border-radius: 16px; padding: 30px; text-align: center; border: 2px solid transparent; }
         .price-card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .price-card.featured { background: var(--primary); color: white; }
         .price-card.featured h3, .price-card.featured .price { color: white; }
+        .price-card.group-deals { background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); color: white; }
+        .price-card.group-deals h3, .price-card.group-deals .price { color: white; }
+        .price-card.group-deals ul li { border-color: rgba(255,255,255,0.2); }
         .price-card h3 { font-size: 22px; margin-bottom: 10px; }
         .price { font-size: 42px; font-weight: 700; color: var(--accent); margin: 15px 0; }
         .price span { font-size: 16px; font-weight: 400; }
@@ -480,6 +537,19 @@
                         <li>Group rates available</li>
                     </ul>
                     <button class="book-btn" id="pricingCallNow">📞 Call Now</button>
+                </div>
+                <div class="price-card group-deals">
+                    <h3>Group Deals</h3>
+                    <div class="price">Save<span>10-20%</span></div>
+                    <ul>
+                        <li>5+ passengers get 10% off</li>
+                        <li>Corporate accounts welcome</li>
+                        <li>Event transportation</li>
+                        <li>Wedding party rates</li>
+                        <li>Airport shuttles for teams</li>
+                        <li>Multiple vehicle discounts</li>
+                    </ul>
+                    <a href="#book" class="book-btn">Get Group Quote</a>
                 </div>
             </div>
         </div>
