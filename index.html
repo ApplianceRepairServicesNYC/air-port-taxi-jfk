@@ -42,7 +42,7 @@
         .nav-right { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
         .services-btn { color: white; font-weight: 600; cursor: pointer; padding: 12px 20px; border-radius: 6px; background: rgba(255,255,255,0.1); }
         .services-btn:hover { background: rgba(255,255,255,0.2); }
-        .nav-call-btn { background: var(--accent); color: var(--primary); padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 17px; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
+        .nav-call-btn { background: var(--accent); color: var(--primary); padding: 12px 28px; border-radius: 6px; font-weight: 700; font-size: 17px; display: inline-flex; align-items: center; justify-content: center; text-align: center; border: none; cursor: pointer; }
         .nav-call-btn:hover { background: #e6951a; }
         .services-dropdown { display: none; position: fixed; top: 70px; width: 400px; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.25); z-index: 1001; padding: 20px; }
         .services-dropdown.open { display: block; }
@@ -69,7 +69,7 @@
         .hero-btn { padding: 16px 36px; border-radius: 8px; font-weight: 700; font-size: 17px; text-decoration: none; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
         .hero-btn.primary { background: #1a1a2e; color: #fff; }
         .hero-btn.primary:hover { background: #2d2d4a; }
-        .hero-btn.secondary { background: #c41e3a; color: white; border: none; }
+        .hero-btn.secondary { background: #c41e3a; color: white; border: none; cursor: pointer; }
         .hero-btn.secondary:hover { background: #a01830; }
         .features { padding: 60px 20px; background: var(--gray); }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
@@ -197,7 +197,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="javascript:void(0)" class="nav-call-btn" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==">📞 Call Now</a>
+                <button class="nav-call-btn" id="navCallNow">📞 Call Now</button>
             </div>
         </div>
     </header>
@@ -208,7 +208,7 @@
             <p>Reliable, affordable taxi service to and from JFK Airport. No hidden fees, no surge pricing - just honest flat rates. Available around the clock, every day of the year.</p>
             <div class="hero-buttons">
                 <a href="#book" class="hero-btn primary">Reserve Your Ride</a>
-                <a href="javascript:void(0)" class="hero-btn secondary" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==">📞 Call Now</a>
+                <button class="hero-btn secondary" id="heroCallNow">📞 Call Now</button>
             </div>
         </div>
     </section>
@@ -479,7 +479,7 @@
                         <li>Questions answered</li>
                         <li>Group rates available</li>
                     </ul>
-                    <a href="javascript:void(0)" class="book-btn" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==">📞 Call Now</a>
+                    <button class="book-btn" id="pricingCallNow">📞 Call Now</button>
                 </div>
             </div>
         </div>
@@ -735,7 +735,7 @@
                         <div class="icon">📞</div>
                         <div>
                             <h4>Call Us 24/7</h4>
-                            <p><a href="javascript:void(0)" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==" style="color: var(--accent); text-decoration: none; cursor: pointer;">Click to Reveal Number</a></p>
+                            <p><button id="contactCallNow" style="background: none; border: none; color: var(--accent); cursor: pointer; font-size: inherit; padding: 0; font-family: inherit;">Click to Reveal Number</button></p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -781,7 +781,7 @@
                 <div class="footer-column">
                     <h3>JFK Airport Taxi Service</h3>
                     <p style="color: #ccc; margin-bottom: 15px;">Your trusted flat rate taxi service to and from JFK Airport. No hidden fees, no surge pricing - just reliable transportation 24/7.</p>
-                    <p style="color: #ccc;">📞 <a href="javascript:void(0)" onclick="revealPhone(this)" data-p1="NzE4" data-p2="NzE3" data-p3="MTcwNg==" style="color: var(--accent); cursor: pointer;">Click to Reveal Number</a></p>
+                    <p style="color: #ccc;">📞 <button id="footerCallNow" style="background: none; border: none; color: var(--accent); cursor: pointer; font-size: inherit; padding: 0; font-family: inherit;">Click to Reveal Number</button></p>
                 </div>
                 <div class="footer-column">
                     <h3>Services</h3>
@@ -832,16 +832,27 @@
             wrapper.classList.toggle('open');
             btn.textContent = wrapper.classList.contains('open') ? 'Hide Airport Taxi Routes ▲' : 'View All Airport Taxi Routes ▼';
         }
-        function revealPhone(el) {
-            var p1 = atob(el.getAttribute('data-p1'));
-            var p2 = atob(el.getAttribute('data-p2'));
-            var p3 = atob(el.getAttribute('data-p3'));
-            var phone = p1 + p2 + p3;
-            var formatted = '(' + p1 + ') ' + p2 + '-' + p3;
-            el.textContent = formatted;
-            el.href = 'tel:+1' + phone;
-            el.onclick = null;
+        function setupCallButton(btn) {
+            if (btn) {
+                btn.addEventListener('click', function() {
+                    if (this.dataset.revealed) {
+                        window.location.href = 'tel:+1' + this.dataset.num;
+                        return;
+                    }
+                    var digits = [7, 1, 8, 7, 1, 7, 1, 7, 0, 6];
+                    var num = digits.join('');
+                    var formatted = '(' + num.slice(0,3) + ') ' + num.slice(3,6) + '-' + num.slice(6);
+                    this.innerHTML = formatted;
+                    this.dataset.revealed = 'true';
+                    this.dataset.num = num;
+                });
+            }
         }
+        setupCallButton(document.getElementById('navCallNow'));
+        setupCallButton(document.getElementById('heroCallNow'));
+        setupCallButton(document.getElementById('pricingCallNow'));
+        setupCallButton(document.getElementById('contactCallNow'));
+        setupCallButton(document.getElementById('footerCallNow'));
         function toggleHowItWorks(btn) {
             var details = btn.nextElementSibling;
             details.classList.toggle('open');
