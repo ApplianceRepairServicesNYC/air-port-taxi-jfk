@@ -127,7 +127,7 @@
         .service-types ul li { background: white; padding: 6px 12px; border-radius: 20px; font-size: 13px; border: 1px solid #e0e0e0; }
         .pricing { padding: 60px 20px; background: white; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .price-card { background: var(--gray); border-radius: 16px; padding: 30px; text-align: center; border: 2px solid transparent; }
+        .price-card { background: var(--gray); border-radius: 16px; padding: 30px; text-align: center; border: 2px solid transparent; display: flex; flex-direction: column; }
         .price-card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .price-card.featured { background: var(--primary); color: white; }
         .price-card.featured h3, .price-card.featured .price { color: white; }
@@ -137,11 +137,11 @@
         .price-card h3 { font-size: 22px; margin-bottom: 10px; }
         .price { font-size: 42px; font-weight: 700; color: var(--accent); margin: 15px 0; }
         .price span { font-size: 16px; font-weight: 400; }
-        .price-card ul { list-style: none; padding: 0; margin: 20px 0; text-align: left; }
+        .price-card ul { list-style: none; padding: 0; margin: 20px 0; text-align: left; flex-grow: 1; }
         .price-card ul li { padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
         .price-card.featured ul li { border-color: rgba(255,255,255,0.2); }
         .price-card ul li::before { content: "✓"; color: var(--accent); margin-right: 10px; font-weight: bold; }
-        .book-btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; padding: 14px 32px; background: var(--accent); color: var(--primary); border-radius: 8px; font-weight: 700; text-decoration: none; min-height: 48px; }
+        .book-btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; padding: 14px 32px; background: var(--accent); color: var(--primary); border-radius: 8px; font-weight: 700; text-decoration: none; min-height: 48px; margin-top: auto; border: none; cursor: pointer; font-size: 16px; width: 100%; box-sizing: border-box; }
         .book-btn:hover { background: #e6951a; }
         .borough-map-section { padding: 40px 20px; background: #f8f9fa; }
         .borough-map-section h2 { font-size: 32px; text-align: center; color: var(--primary); margin-bottom: 10px; }
@@ -471,6 +471,7 @@
                         <li>Price locked at booking</li>
                         <li>No surge pricing</li>
                         <li>Same price both ways</li>
+                        <li>No hidden fees</li>
                     </ul>
                     <a href="#book" class="book-btn">Get Quote</a>
                 </div>
@@ -496,19 +497,20 @@
                         <li>Book over the phone</li>
                         <li>Questions answered</li>
                         <li>Group rates available</li>
+                        <li>Special requests welcome</li>
                     </ul>
                     <button class="book-btn" id="pricingCallNow">📞 Call Now</button>
                 </div>
                 <div class="price-card group-deals">
                     <h3>Group Deals</h3>
-                    <div class="price">Save<span>10-20%</span></div>
+                    <div class="price">Groups<span>& Events</span></div>
                     <ul>
-                        <li>5+ passengers get 10% off</li>
-                        <li>Corporate accounts welcome</li>
+                        <li>5+ passengers welcome</li>
+                        <li>Corporate accounts</li>
                         <li>Event transportation</li>
                         <li>Wedding party rates</li>
                         <li>Airport shuttles for teams</li>
-                        <li>Multiple vehicle discounts</li>
+                        <li>Multiple vehicle options</li>
                     </ul>
                     <a href="#book" class="book-btn">Get Group Quote</a>
                 </div>
