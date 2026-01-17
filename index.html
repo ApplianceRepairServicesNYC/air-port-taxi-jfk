@@ -111,8 +111,7 @@
         .feature-card .feature-details.open { display: block; }
         .feature-card .feature-details ul { margin: 10px 0; padding-left: 20px; }
         .feature-card .feature-details li { margin-bottom: 8px; }
-        section.alt { background: var(--gray); padding: 60px 0; position: relative; overflow: hidden; }
-        section.alt::before { content: ''; position: absolute; top: 20%; left: -5%; width: 350px; height: 175px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150' fill='none'%3E%3Cpath d='M20 75c0-3 2-6 5-8l50-15c2-5 6-10 12-14L180 10c4-2 8 0 10 4l4 10c2 4 0 8-4 10l-40 20 60 8 24-20c2-2 6-2 8 0l8 6c2 2 2 6 0 8l-30 30h80c6 0 12 2 16 6l8 8c2 2 2 6 0 8-2 4-6 4-10 2l-50-16-70-4-70 10c-6 0-12-2-16-6l-6-8c-2-2-2-4-2-6z' fill='%231a1a2e' opacity='0.03'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: contain; pointer-events: none; transform: scaleX(-1); }
+        section.alt { background: var(--gray); padding: 60px 0; }
         section h2 { text-align: center; font-size: 36px; margin-bottom: 40px; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 0 20px; }
         .service { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.08); }
@@ -126,16 +125,15 @@
         .service-types h3 { font-size: 16px; margin-bottom: 10px; color: var(--primary); }
         .service-types ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 0 15px 0; }
         .service-types ul li { background: white; padding: 6px 12px; border-radius: 20px; font-size: 13px; border: 1px solid #e0e0e0; }
-        .pricing { padding: 60px 20px; background: white; position: relative; overflow: hidden; }
-        .pricing::before { content: ''; position: absolute; top: 50%; right: -5%; transform: translateY(-50%); width: 400px; height: 200px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150' fill='none'%3E%3Cpath d='M380 75c0-3-2-6-5-8l-50-15c-2-5-6-10-12-14L220 10c-4-2-8 0-10 4l-4 10c-2 4 0 8 4 10l40 20-60 8-24-20c-2-2-6-2-8 0l-8 6c-2 2-2 6 0 8l30 30H100c-6 0-12 2-16 6l-8 8c-2 2-2 6 0 8 2 4 6 4 10 2l50-16 70-4 70 10c6 0 12-2 16-6l6-8c2-2 2-4 2-6z' fill='%231a1a2e' opacity='0.03'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: contain; pointer-events: none; }
+        .pricing { padding: 60px 20px; background: white; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
         .price-card { background: var(--gray); border-radius: 16px; padding: 30px; text-align: center; border: 2px solid transparent; display: flex; flex-direction: column; }
         .price-card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .price-card.featured { background: var(--primary); color: white; }
         .price-card.featured h3, .price-card.featured .price { color: white; }
-        .price-card.group-deals { background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); color: white; }
+        .price-card.group-deals { background: linear-gradient(135deg, #37474f 0%, #263238 100%); color: white; }
         .price-card.group-deals h3, .price-card.group-deals .price { color: white; }
-        .price-card.group-deals ul li { border-color: rgba(255,255,255,0.2); }
+        .price-card.group-deals ul li { border-color: rgba(255,255,255,0.15); }
         .price-card h3 { font-size: 22px; margin-bottom: 10px; }
         .price { font-size: 42px; font-weight: 700; color: var(--accent); margin: 15px 0; }
         .price span { font-size: 16px; font-weight: 400; }
@@ -169,8 +167,7 @@
         .borough-card .borough-details strong { color: var(--accent); }
         .borough-card .map-btn { display: block; padding: 16px 32px; background: var(--accent); color: var(--primary); text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 8px; min-height: 48px; margin-top: 15px; }
         .borough-card .map-btn:hover { background: #e6951a; }
-        .contact-section { padding: 60px 20px; background: white; position: relative; overflow: hidden; }
-        .contact-section::before { content: ''; position: absolute; bottom: 10%; left: -3%; width: 300px; height: 150px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150' fill='none'%3E%3Cpath d='M380 75c0-3-2-6-5-8l-50-15c-2-5-6-10-12-14L220 10c-4-2-8 0-10 4l-4 10c-2 4 0 8 4 10l40 20-60 8-24-20c-2-2-6-2-8 0l-8 6c-2 2-2 6 0 8l30 30H100c-6 0-12 2-16 6l-8 8c-2 2-2 6 0 8 2 4 6 4 10 2l50-16 70-4 70 10c6 0 12-2 16-6l6-8c2-2 2-4 2-6z' fill='%231a1a2e' opacity='0.025'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: contain; pointer-events: none; transform: rotate(-15deg); }
+        .contact-section { padding: 60px 20px; background: white; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; }
         @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
         .contact-form { background: var(--gray); padding: 30px; border-radius: 16px; }
