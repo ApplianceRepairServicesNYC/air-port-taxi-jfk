@@ -659,7 +659,7 @@
                         </div>
                         <div class="form-group">
                             <label for="pickup">Pickup Location *</label>
-                            <select id="pickup" name="pickup" required>
+                            <select id="pickup" name="pickup" required onchange="toggleCustomPickup(this)">
                                 <option value="">Select pickup...</option>
                                 <option value="JFK Terminal 1">JFK Terminal 1</option>
                                 <option value="JFK Terminal 4">JFK Terminal 4</option>
@@ -671,8 +671,12 @@
                                 <option value="Queens">Queens Address</option>
                                 <option value="Bronx">Bronx Address</option>
                                 <option value="Staten Island">Staten Island Address</option>
-                                <option value="Other">Other Location</option>
+                                <option value="Custom">Enter My Address</option>
                             </select>
+                        </div>
+                        <div class="form-group" id="customPickupGroup" style="display:none;">
+                            <label for="customPickup">Your Pickup Address *</label>
+                            <input type="text" id="customPickup" name="customPickup" placeholder="Enter your full street address">
                         </div>
                         <div class="form-group">
                             <label for="dropoff">Drop-off Destination *</label>
@@ -1485,6 +1489,18 @@
             }
         });
         document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        function toggleCustomPickup(select) {
+            var customGroup = document.getElementById('customPickupGroup');
+            var customInput = document.getElementById('customPickup');
+            if (select.value === 'Custom') {
+                customGroup.style.display = 'block';
+                customInput.required = true;
+            } else {
+                customGroup.style.display = 'none';
+                customInput.required = false;
+                customInput.value = '';
+            }
+        }
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var form = this;
