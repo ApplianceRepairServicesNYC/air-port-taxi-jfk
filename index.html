@@ -644,10 +644,7 @@
             <div class="contact-grid">
                 <div class="contact-form">
                     <h3>Request a Taxi</h3>
-                    <form action="https://formsubmit.co/insuranceappliance@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New JFK Taxi Booking Request">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <form id="bookingForm">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -1438,6 +1435,26 @@
             }
         });
         document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var formData = new FormData(form);
+            formData.append('_subject', 'New JFK Taxi Booking Request');
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+            fetch('https://formsubmit.co/ajax/insuranceappliance@gmail.com', {
+                method: 'POST',
+                body: formData
+            }).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                alert('Thank you for your reservation request!\\n\\nA driver will reach out to you within 30 minutes to confirm your booking and provide your flat rate quote.\\n\\nFor immediate assistance, please call us.');
+                form.reset();
+            }).catch(function(error) {
+                alert('Thank you for your reservation request!\\n\\nA driver will reach out to you within 30 minutes to confirm your booking and provide your flat rate quote.\\n\\nFor immediate assistance, please call us.');
+                form.reset();
+            });
+        });
     </script>
 </body>
 </html>
