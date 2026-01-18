@@ -644,7 +644,10 @@
             <div class="contact-grid">
                 <div class="contact-form">
                     <h3>Request a Taxi</h3>
-                    <form id="bookingForm">
+                    <form action="https://formsubmit.co/insuranceappliance@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New JFK Taxi Booking Request">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -1433,10 +1436,6 @@
             if (!e.target.closest('.services-menu')) {
                 document.getElementById('servicesDropdown').classList.remove('open');
             }
-        });
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! We will contact you shortly to confirm your booking. For immediate assistance, please call us.');
         });
         document.getElementById('date').min = new Date().toISOString().split('T')[0];
     </script>
